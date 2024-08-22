@@ -1,0 +1,81 @@
+
+
+#define _CRT_SECURE_NO_WARNINGS
+
+#include <stdio.h>
+#include <stdlib.h>
+
+float getFloat();
+
+/*
+* Graded Exercise 5
+*/
+int main(int argc, char** argv)
+{
+    // Problem 1: Define type for GPS coordinates
+
+    // Creating the new data type that will take both latitude and longitude
+    struct GPS_Cords
+    {
+        float latitude;
+        float longitude;
+    };
+
+    // Problem 2: Declare and initialize variables
+
+    // Declare the visiting cord data type
+    struct GPS_Cords Cords_1;
+    struct GPS_Cords Cords_2;
+
+    // Get info for the visiitng latitude
+    printf("Enter the latitude for Cord 1: ");
+    Cords_1.latitude = getFloat();
+
+
+
+    // Get info for the visiting longitude
+    printf("Enter the longitude Cord 1: ");
+    Cords_1.longitude = getFloat();
+
+    
+    
+    // Get info for the visiitng latitude
+    printf("/nEnter the latitude for Cord 2: ");
+    Cords_2.latitude = getFloat();
+
+
+
+    // Get info for the visiting longitude
+    printf("Enter the longitude Cord 2: ");
+    Cords_2.longitude = getFloat();
+
+
+    // Problem 3: Print latitude and longitude differences
+
+
+
+    // Delcaring and intilializing calculated info into sperate parts
+    float Diff_CordsLat;
+    float Diff_CordsLong;
+
+
+    // Then find the difference in latitude and longitude
+    Diff_CordsLat = Cords_2.latitude - Cords_1.latitude;
+    Diff_CordsLong = Cords_2.longitude - Cords_1.longitude;
+
+    // With said calculated info print it out.
+    printf("The difference in longitude and latitude is: %f,%f \n",Diff_CordsLat,Diff_CordsLong);
+
+
+    return (EXIT_SUCCESS);
+}
+
+/*
+* Gets a floating-point number from the user
+*/
+float getFloat()
+{
+    float number;
+    scanf("%f", &number);
+    return number;
+}
